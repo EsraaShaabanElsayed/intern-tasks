@@ -61,3 +61,5 @@ A Bash implementation of core grep functionality with case-insensitive search an
 ./mygrep.sh -n test testfile.txt
 ./mygrep.sh -vn hello testfile.txt
 ```
+![Screenshot 2025-04-28 210156](https://github.com/user-attachments/assets/ec25bb86-94be-41dc-9b89-d38af7ede825)
+
