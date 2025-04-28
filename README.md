@@ -62,4 +62,30 @@ A Bash implementation of core grep functionality with case-insensitive search an
 ./mygrep.sh -vn hello testfile.txt
 ```
 ![Screenshot 2025-04-28 210156](https://github.com/user-attachments/assets/ec25bb86-94be-41dc-9b89-d38af7ede825)
+# Troubleshooting Internal Dashboard (DNS/Network)
+
+Diagnostic, analysis, and resolution of internal service (`internal.example.com`) DNS issues.
+
+## Problem
+- Users could not resolve `internal.example.com` (host not found error).
+- Service was running but unreachable.
+
+## Key Steps
+- Verified DNS client configuration (`/etc/resolv.conf`, `resolvectl status`).
+- Tested resolution via internal (`172.31.0.2`) and public (`8.8.8.8`) DNS.
+- Confirmed NXDOMAIN (missing DNS record).
+- Validated no network/firewall issues (port 53 UDP open).
+
+## Conclusion
+- **Root cause:** Missing internal DNS A record.
+- **Fix:** Create a correct A record for `internal.example.com` on internal DNS server.
+- **Bonus:** Suggested a temporary `/etc/hosts` entry for local testing if needed.
+
+## Tools Used
+- `dig`
+- `nc`
+- `ping`
+- `curl`
+- `resolvectl`
+
 
